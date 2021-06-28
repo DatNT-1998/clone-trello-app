@@ -39,7 +39,7 @@ $column-border-radius: 5px;
     border-bottom-right-radius: $column-border-radius;
   }
 
-  ul.task-list {
+  ul.card-list {
     list-style-type: none;
     margin: 0;
     max-height: calc(
@@ -54,7 +54,7 @@ $column-border-radius: 5px;
     }
     &::-webkit-scrollbar-thumb {
       background-color: darken($color: $list-bg-color, $amount: 15);
-      border-right: 5px soild $list-bg-color;
+      border-right: 5px solid $list-bg-color;
     }
   }
 }
