@@ -10,9 +10,8 @@ $column-border-radius: 5px;
   flex: 0 0 auto;
   width: 300px;
   height: calc(100% - #{$gap});
-  &:not(:first-child) {
-    margin-left: $gap;
-  }
+
+  margin-left: $gap;
 
   > * {
     background-color: $list-bg-color;
@@ -20,7 +19,8 @@ $column-border-radius: 5px;
     padding: 0 8px;
   }
 
-  header {
+  header.column-drag-handle {
+    cursor: pointer;
     padding-left: 15px;
     height: $column-header-height;
     line-height: $column-header-height;
@@ -39,8 +39,8 @@ $column-border-radius: 5px;
     border-bottom-right-radius: $column-border-radius;
   }
 
-  ul.card-list {
-    list-style-type: none;
+  div.card-list {
+    cursor: pointer;
     margin: 0;
     max-height: calc(
       100% - #{$column-header-height} - #{$column-footer-height}
@@ -55,6 +55,22 @@ $column-border-radius: 5px;
     &::-webkit-scrollbar-thumb {
       background-color: darken($color: $list-bg-color, $amount: 15);
       border-right: 5px solid $list-bg-color;
+    }
+
+    .card-ghost {
+      transition: transform 0.18s ease;
+      transform: rotateZ(5deg);
+    }
+
+    .card-ghost-drop {
+      transition: transform 0.18s ease-in-out;
+      transform: rotateZ(0deg);
+    }
+
+    .card-drop-preview {
+      background-color: rgba(150, 150, 200, 0.1);
+      border: 1px dashed #abc;
+      margin: 5px;
     }
   }
 }
