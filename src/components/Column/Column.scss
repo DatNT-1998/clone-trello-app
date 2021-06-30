@@ -4,18 +4,15 @@ $list-bg-color: #ebecf0;
 
 $column-header-height: 36px;
 $column-footer-height: 36px;
-$column-border-radius: 5px;
 
 .column {
   flex: 0 0 auto;
   width: 300px;
   height: calc(100% - #{$gap});
-
   margin-left: $gap;
 
   > * {
     background-color: $list-bg-color;
-    color: #333;
     padding: 0 8px;
   }
 
@@ -37,14 +34,20 @@ $column-border-radius: 5px;
     font-size: 14px;
     border-bottom-left-radius: $column-border-radius;
     border-bottom-right-radius: $column-border-radius;
+    color: #888;
+    .footer-actions {
+      margin-left: $gap;
+      cursor: pointer;
+      &:hover {
+        color: $app-main-text-color;
+      }
+    }
   }
 
   div.card-list {
     cursor: pointer;
     margin: 0;
-    max-height: calc(
-      100% - #{$column-header-height} - #{$column-footer-height}
-    );
+    max-height: 79vh;
     overflow-y: auto;
     &::-webkit-scrollbar {
       -webkit-appearance: none;
