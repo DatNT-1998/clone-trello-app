@@ -1,7 +1,5 @@
 @import '_setting.scss';
 
-$list-bg-color: #ebecf0;
-
 $column-header-height: 36px;
 $column-footer-height: 36px;
 
@@ -12,7 +10,7 @@ $column-footer-height: 36px;
   margin-left: $gap;
 
   > * {
-    background-color: $list-bg-color;
+    background-color: $column-bg-color;
     padding: 0 8px;
   }
 
@@ -47,7 +45,7 @@ $column-footer-height: 36px;
   div.card-list {
     cursor: pointer;
     margin: 0;
-    max-height: 79vh;
+    max-height: 75vh;
     overflow-y: auto;
     &::-webkit-scrollbar {
       -webkit-appearance: none;
@@ -56,8 +54,8 @@ $column-footer-height: 36px;
       width: 11px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: darken($color: $list-bg-color, $amount: 15);
-      border-right: 5px solid $list-bg-color;
+      background-color: darken($color: $column-bg-color, $amount: 15);
+      border-right: 5px solid $column-bg-color;
     }
 
     .card-ghost {

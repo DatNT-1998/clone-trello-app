@@ -6,7 +6,7 @@ import BoardContent from 'components/BoardContent/BoardContent';
 
 function App() {
   return (
-    <div className='container'>
+    <div className='trello-container'>
       <AppBar />
       <BoardBar />
       <BoardContent />
