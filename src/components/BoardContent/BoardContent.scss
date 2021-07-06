@@ -54,11 +54,13 @@
     border-radius: $column-border-radius;
     background-color: $column-bg-color;
     line-height: 32px;
-
     margin-left: $gap;
     padding: 4px 15px;
     input.input-enter-new-column {
       margin: 5px 0;
+      &:focus {
+        border-color: $input-border-color;
+      }
     }
 
     .cancel-new-column {
