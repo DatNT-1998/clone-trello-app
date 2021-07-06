@@ -45,5 +45,13 @@ body {
   .input-contenteditable {
     background-color: $column-bg-color;
     color: inherit;
+    font-weight: inherit;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      background-color: #fff;
+      border: 1px solid $input-border-color;
+    }
   }
 }
