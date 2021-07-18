@@ -114,5 +114,13 @@ $column-footer-height: 36px;
       border: 1px dashed #abc;
       margin: 5px;
     }
+
+    .add-new-card-area {
+      .textarea-enter-new-card {
+        min-height: 54px;
+        max-height: 162px;
+        margin-bottom: $gap;
+      }
+    }
   }
 }
