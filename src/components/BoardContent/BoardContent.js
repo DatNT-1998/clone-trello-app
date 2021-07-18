@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './BoardContent.scss';
 import Column from 'components/Column/Column';
 import { initialData } from 'actions/initialData';
@@ -17,12 +17,13 @@ import {
 const BoardContent = () => {
   const [board, setBoard] = useState({});
   const [columns, setColumns] = useState([]);
+
   const [openNewColumn, setOpenNewColumn] = useState(false);
+  const toggleOpenNewColumn = () => setOpenNewColumn(!openNewColumn);
+
   const [newColumnTitle, setNewColumnTitle] = useState('');
-  const onNewColumnTitleChange = useCallback(
-    (e) => setNewColumnTitle(e.target.value),
-    []
-  );
+  const onNewColumnTitleChange = (e) => setNewColumnTitle(e.target.value);
+
   const newColumnInputRef = useRef(null);
 
   useEffect(() => {
@@ -69,8 +70,6 @@ const BoardContent = () => {
       setColumns(newColumns);
     }
   };
-
-  const toggleOpenNewColumn = () => setOpenNewColumn(!openNewColumn);
 
   const addNewColumn = () => {
     if (!newColumnTitle) {
@@ -163,11 +162,12 @@ const BoardContent = () => {
                 ref={newColumnInputRef}
                 value={newColumnTitle}
                 onChange={onNewColumnTitleChange}
+                onKeyDown={(event) => event.key === 'ENter' && addNewColumn()}
               />
               <Button size="sm" variant="success" onClick={addNewColumn}>
                 Add column
               </Button>
-              <span className="cancel-new-column" onClick={toggleOpenNewColumn}>
+              <span className="cancel-icon" onClick={toggleOpenNewColumn}>
                 <i className="fa fa-trash"></i>
               </span>
             </Col>
