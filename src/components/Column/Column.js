@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Card from 'components/Card/Card';
 import { Container, Draggable } from 'react-smooth-dnd';
 
-import { cloneDeep } from 'lodash';
 import { mapOrder } from 'utilities/sort';
 import './Column.scss';
 import { Button, Dropdown, Form } from 'react-bootstrap';
@@ -76,7 +75,7 @@ const Column = (props) => {
       title: newCardTitle.trim(),
       cover: null,
     };
-    let newColumn = cloneDeep(column);
+    let newColumn = JSON.parse(JSON.stringify(column));
     newColumn.cards.push(newCardtoAdd);
     newColumn.cardOrder.push(newCardtoAdd.id);
 
